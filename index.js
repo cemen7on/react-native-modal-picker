@@ -63,13 +63,13 @@ export default class ModalPicker extends BaseComponent {
         this._bind(
             'onChange',
             'open',
-            'close',
-            'renderChildren'
+            'close'
+            // 'renderChildren'
         );
 
         this.state = {
             animationType: 'slide',
-            modalVisible: true,
+            modalVisible: false,
             transparent: false,
             selected: 'please select'
         };
@@ -93,9 +93,12 @@ export default class ModalPicker extends BaseComponent {
     }
 
     close() {
+    /*
       this.setState({
         modalVisible: false
-      });
+      }, this.props.onClose);
+      */
+      this.props.onClose();
     }
 
     open() {
