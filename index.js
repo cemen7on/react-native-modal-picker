@@ -69,7 +69,7 @@ export default class ModalPicker extends BaseComponent {
 
         this.state = {
             animationType: 'slide',
-            modalVisible: false,
+            modalVisible: true,
             transparent: false,
             selected: 'please select'
         };
