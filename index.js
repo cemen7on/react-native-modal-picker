@@ -23,6 +23,7 @@ let componentIndex = 0;
 const propTypes = {
     data: PropTypes.array,
     onChange: PropTypes.func,
+    onCloze:PropTypes.func,
     initValue: PropTypes.string,
     style: View.propTypes.style,
     selectStyle: View.propTypes.style,
@@ -37,8 +38,9 @@ const propTypes = {
 };
 
 const defaultProps = {
-    data: [],
+    data:[],
     onChange: ()=> {},
+    onClose:()=>{},
     initValue: 'Select me!',
     style: {},
     selectStyle: {},
@@ -67,7 +69,7 @@ export default class ModalPicker extends BaseComponent {
 
         this.state = {
             animationType: 'slide',
-            modalVisible: false,
+            modalVisible: true,
             transparent: false,
             selected: 'please select'
         };
@@ -131,7 +133,7 @@ export default class ModalPicker extends BaseComponent {
         return (
             <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)}>
                 <View style={styles.optionContainer}>
-                    <ScrollView keyboardShouldPersistTaps>
+                    <ScrollView keyboardShouldPersistTaps="always">
                         <View style={{paddingHorizontal:10}}>
                             {options}
                         </View>
@@ -148,6 +150,7 @@ export default class ModalPicker extends BaseComponent {
             </View>);
     }
 
+    /*
     renderChildren() {
 
         if(this.props.children) {
@@ -159,21 +162,25 @@ export default class ModalPicker extends BaseComponent {
             </View>
         );
     }
+    */
 
     render() {
 
         const dp = (
           <Modal transparent={true} ref="modal" visible={this.state.modalVisible} onRequestClose={this.close} animationType={this.state.animationType}>
-          {this.renderOptionList()}
+            {this.renderOptionList()}
           </Modal>
         );
 
         return (
             <View style={this.props.style}>
                 {dp}
+
+                {/*
                 <TouchableOpacity onPress={this.open}>
                     {this.renderChildren()}
                 </TouchableOpacity>
+                */}
             </View>
         );
     }
