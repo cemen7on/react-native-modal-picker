@@ -69,7 +69,6 @@ export default class ModalPicker extends BaseComponent {
 
         this.state = {
             animationType: 'slide',
-            modalVisible: true,
             transparent: false,
             selected: 'please select'
         };
@@ -170,7 +169,7 @@ export default class ModalPicker extends BaseComponent {
     render() {
 
         const dp = (
-          <Modal transparent={true} ref="modal" visible={this.state.modalVisible} onRequestClose={this.close} animationType={this.state.animationType}>
+          <Modal transparent={true} ref="modal" visible={this.props.modalVisible} onRequestClose={this.close} animationType={this.state.animationType}>
             {this.renderOptionList()}
           </Modal>
         );
