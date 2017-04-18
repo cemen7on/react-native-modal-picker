@@ -114,10 +114,10 @@ export default class ModalPicker extends BaseComponent {
         );
     }
 
-    renderOption(option, last=false) {
+    renderOption(option, first=false, last=false) {
         return (
             <TouchableOpacity key={option.key} onPress={()=>this.onChange(option)}>
-                <View style={[styles.optionStyle, last ? styles.optionLastStyle : null, this.props.optionStyle]}>
+                <View style={[styles.optionStyle, first ? styles.optionFirstStyle : null, last ? styles.optionLastStyle : null, this.props.optionStyle]}>
                     <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
                 </View>
             </TouchableOpacity>)
@@ -128,7 +128,7 @@ export default class ModalPicker extends BaseComponent {
             if (item.section) {
                 return this.renderSection(item);
             } else {
-                return this.renderOption(item, i==this.props.data.length-1);
+                return this.renderOption(item, i==0, i==this.props.data.length-1);
             }
         });
 

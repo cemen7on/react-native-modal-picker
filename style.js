@@ -31,6 +31,7 @@ export default StyleSheet.create({
     },
 
     cancelContainer: {
+        marginTop:10
         // left:width*0.1,
         // top:(height-OPTION_CONTAINER_HEIGHT)/2 + 10
     },
