@@ -4,10 +4,11 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const {height, width} = Dimensions.get('window');
 
-const PADDING = 8;
-const BORDER_RADIUS = 5;
-const FONT_SIZE = 16;
-const HIGHLIGHT_COLOR = 'rgba(0,118,255,0.9)';
+const PADDING = 20;
+const BORDER_RADIUS = 10;
+const FONT_SIZE = 18;
+// const HIGHLIGHT_COLOR = 'rgba(0,118,255,0.9)';
+const HIGHLIGHT_COLOR = '#5f9ee5';
 const OPTION_CONTAINER_HEIGHT = 400;
 
 export default StyleSheet.create({
@@ -15,16 +16,20 @@ export default StyleSheet.create({
     overlayStyle: {
         width: width,
         height: height,
-        backgroundColor: 'rgba(0,0,0,0.7)'
+        backgroundColor: 'rgba(0,0,0,0.7)',
+        justifyContent:'flex-end',
+        alignItems:'center',
+        padding:20
     },
 
     optionContainer: {
         borderRadius:BORDER_RADIUS,
-        width:width*0.8,
-        height:OPTION_CONTAINER_HEIGHT,
-        backgroundColor:'rgba(255,255,255,0.8)',
-        left:width*0.1,
-        top:(height-OPTION_CONTAINER_HEIGHT)/2
+        // width:width*0.8,
+        width:200,
+        // height:OPTION_CONTAINER_HEIGHT,
+        backgroundColor:'rgba(255,255,255,1)',
+        // left:width*0.1,
+        // top:(height-OPTION_CONTAINER_HEIGHT)/2
     },
 
     cancelContainer: {
@@ -62,7 +67,7 @@ export default StyleSheet.create({
     optionStyle: {
         padding: PADDING,
         borderBottomWidth: 1,
-        borderBottomColor: '#ccc'
+        borderBottomColor: '#fdfdfe'
     },
 
     optionTextStyle: {

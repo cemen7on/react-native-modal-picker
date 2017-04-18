@@ -136,18 +136,21 @@ export default class ModalPicker extends BaseComponent {
             <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)}>
                 <View style={styles.optionContainer}>
                     <ScrollView keyboardShouldPersistTaps="always">
-                        <View style={{paddingHorizontal:10}}>
+                        <View>
                             {options}
                         </View>
                     </ScrollView>
                 </View>
-                <View style={styles.cancelContainer}>
-                    <TouchableOpacity onPress={this.close}>
-                        <View style={[styles.cancelStyle, this.props.cancelStyle]}>
-                            <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
+
+                {/*
+                    <View style={styles.cancelContainer}>
+                        <TouchableOpacity onPress={this.close}>
+                            <View style={[styles.cancelStyle, this.props.cancelStyle]}>
+                                <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                */}
 
             </View>);
     }
