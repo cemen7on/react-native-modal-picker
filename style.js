@@ -67,7 +67,8 @@ export default StyleSheet.create({
     optionStyle: {
         padding: PADDING,
         borderBottomWidth: 1,
-        borderBottomColor: '#fdfdfe'
+        borderBottomColor: '#fdfdfe',
+        backgroundColor:'#ffffff',
     },
 
     optionLastStyle:{
