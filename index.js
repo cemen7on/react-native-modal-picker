@@ -134,22 +134,24 @@ export default class ModalPicker extends BaseComponent {
         });
 
         return (
-            <TouchableWithoutFeedback style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)} onPress={this.close}>
-                <View>
-                    <View style={styles.optionContainer}>
-                        <ScrollView keyboardShouldPersistTaps="always">
-                            <View>
-                                {options}
-                            </View>
-                        </ScrollView>
-                    </View>
+            <TouchableWithoutFeedback key={'modalPicker'+(componentIndex++)} onPress={this.close}>
+                <View style={[styles.overlayStyle, this.props.overlayStyle]}>
+                    <View>
+                        <View style={styles.optionContainer}>
+                            <ScrollView keyboardShouldPersistTaps="always">
+                                <View>
+                                    {options}
+                                </View>
+                            </ScrollView>
+                        </View>
 
-                    <View style={styles.cancelContainer}>
-                        <TouchableOpacity onPress={this.close}>
-                            <View style={[styles.cancelStyle, this.props.cancelStyle]}>
-                                <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
-                            </View>
-                        </TouchableOpacity>
+                        <View style={styles.cancelContainer}>
+                            <TouchableOpacity onPress={this.close}>
+                                <View style={[styles.cancelStyle, this.props.cancelStyle]}>
+                                    <Text style={[styles.cancelTextStyle,this.props.cancelTextStyle]}>{this.props.cancelText}</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
             </TouchableWithoutFeedback>
