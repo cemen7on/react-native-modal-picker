@@ -16,7 +16,7 @@ export default StyleSheet.create({
     overlayStyle: {
         width: width,
         height: height,
-        backgroundColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(0,0,0,0.1)',
         justifyContent:'flex-end',
         alignItems:'center',
         padding:20
@@ -67,8 +67,7 @@ export default StyleSheet.create({
     optionStyle: {
         padding: PADDING,
         borderBottomWidth: 1,
-        borderBottomColor: '#fdfdfe',
-        backgroundColor:'#ffffff',
+        borderBottomColor: '#ddd'
     },
 
     optionLastStyle:{
