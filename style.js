@@ -5,7 +5,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 const {height, width} = Dimensions.get('window');
 
 const PADDING = 20;
-const BORDER_RADIUS = 10;
+const BORDER_RADIUS = 15;
 const FONT_SIZE = 18;
 // const HIGHLIGHT_COLOR = 'rgba(0,118,255,0.9)';
 const HIGHLIGHT_COLOR = '#5f9ee5';
@@ -25,7 +25,7 @@ export default StyleSheet.create({
     optionContainer: {
         borderRadius:BORDER_RADIUS,
         // width:width*0.8,
-        width:200,
+        width:300,
         // height:OPTION_CONTAINER_HEIGHT,
         backgroundColor:'rgba(255,255,255,1)',
         // left:width*0.1,
@@ -73,6 +73,7 @@ export default StyleSheet.create({
     optionTextStyle: {
         textAlign: 'center',
         fontSize: FONT_SIZE,
+        fontWeight:500,
         color: HIGHLIGHT_COLOR
     },
 
