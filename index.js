@@ -114,26 +114,26 @@ export default class ModalPicker extends BaseComponent {
         );
     }
 
-    renderOption(option) {
+    renderOption(option, last=false) {
         return (
             <TouchableOpacity key={option.key} onPress={()=>this.onChange(option)}>
-                <View style={[styles.optionStyle, this.props.optionStyle]}>
+                <View style={[styles.optionStyle, last ? styles.optionLastStyle : null, this.props.optionStyle]}>
                     <Text style={[styles.optionTextStyle,this.props.optionTextStyle]}>{option.label}</Text>
                 </View>
             </TouchableOpacity>)
     }
 
     renderOptionList() {
-        var options = this.props.data.map((item) => {
+        var options = this.props.data.map((item, i) => {
             if (item.section) {
                 return this.renderSection(item);
             } else {
-                return this.renderOption(item);
+                return this.renderOption(item, i==this.props.data.length-1);
             }
         });
 
         return (
-            <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)}>
+            <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)} onPress={this.close}>
                 <View style={styles.optionContainer}>
                     <ScrollView keyboardShouldPersistTaps="always">
                         <View>

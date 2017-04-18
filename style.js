@@ -16,7 +16,7 @@ export default StyleSheet.create({
     overlayStyle: {
         width: width,
         height: height,
-        backgroundColor: 'rgba(0,0,0,0.7)',
+        backgroundColor: 'rgba(0,0,0,0)',
         justifyContent:'flex-end',
         alignItems:'center',
         padding:20
@@ -27,7 +27,7 @@ export default StyleSheet.create({
         // width:width*0.8,
         width:300,
         // height:OPTION_CONTAINER_HEIGHT,
-        backgroundColor:'rgba(255,255,255,1)',
+        backgroundColor:'#ffffff',
         // left:width*0.1,
         // top:(height-OPTION_CONTAINER_HEIGHT)/2
     },
@@ -68,6 +68,10 @@ export default StyleSheet.create({
         padding: PADDING,
         borderBottomWidth: 1,
         borderBottomColor: '#fdfdfe'
+    },
+
+    optionLastStyle:{
+        borderBottomWidth:0
     },
 
     optionTextStyle: {
