@@ -12,6 +12,7 @@ import {
     Text,
     ScrollView,
     TouchableOpacity,
+    TouchableWithoutFeedback,
     Platform
 } from 'react-native';
 
@@ -133,7 +134,7 @@ export default class ModalPicker extends BaseComponent {
         });
 
         return (
-            <View style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)} onPress={this.close}>
+            <TouchableWithoutFeedback style={[styles.overlayStyle, this.props.overlayStyle]} key={'modalPicker'+(componentIndex++)} onPress={this.close}>
                 <View>
                     <View style={styles.optionContainer}>
                         <ScrollView keyboardShouldPersistTaps="always">
@@ -151,7 +152,8 @@ export default class ModalPicker extends BaseComponent {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </View>);
+            </TouchableWithoutFeedback>
+        );
     }
 
     /*
