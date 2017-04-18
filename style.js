@@ -73,7 +73,7 @@ export default StyleSheet.create({
     optionTextStyle: {
         textAlign: 'center',
         fontSize: FONT_SIZE,
-        fontWeight:500,
+        fontWeight:'500',
         color: HIGHLIGHT_COLOR
     },
 
