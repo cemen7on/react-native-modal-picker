@@ -23,7 +23,6 @@ export default StyleSheet.create({
     },
 
     optionContainer: {
-        borderRadius:BORDER_RADIUS,
         // width:width*0.8,
         width:300,
         // height:OPTION_CONTAINER_HEIGHT,
@@ -32,8 +31,8 @@ export default StyleSheet.create({
     },
 
     cancelContainer: {
-        left:width*0.1,
-        top:(height-OPTION_CONTAINER_HEIGHT)/2 + 10
+        // left:width*0.1,
+        // top:(height-OPTION_CONTAINER_HEIGHT)/2 + 10
     },
 
     selectStyle: {
@@ -52,27 +51,34 @@ export default StyleSheet.create({
 
     cancelStyle: {
         borderRadius: BORDER_RADIUS,
-        width: width * 0.8,
-        backgroundColor: 'rgba(255,255,255,0.8)',
+        width:300,
+        backgroundColor: 'rgba(255,255,255,0.9)',
         padding: PADDING
     },
 
     cancelTextStyle: {
         textAlign: 'center',
-        color: '#333',
-        fontSize: FONT_SIZE
+        color: HIGHLIGHT_COLOR,
+        fontSize: FONT_SIZE,
+        fontWeight:'500',
     },
 
     optionStyle: {
         padding: PADDING,
-        backgroundColor:'rgba(255, 255, 255, 0.8)',
+        backgroundColor:'rgba(255, 255, 255, 0.9)',
         marginBottom:1
         // borderBottomWidth: 1,
         // borderBottomColor: '#ddd'
     },
 
+    optionFirstStyle:{
+        borderTopLeftRadius:BORDER_RADIUS,
+        borderTopRightRadius:BORDER_RADIUS
+    },
+
     optionLastStyle:{
-        // borderBottomWidth:0
+        borderBottomLeftRadius:BORDER_RADIUS,
+        borderBottomRightRadius:BORDER_RADIUS
     },
 
     optionTextStyle: {
